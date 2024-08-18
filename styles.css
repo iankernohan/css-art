@@ -1,0 +1,354 @@
+* {
+    margin: 0;
+}
+
+body {
+    display: grid;
+    height: 100dvh;
+    place-content: center;
+    background-color: black;
+}
+
+main {
+    height: 40rem;
+    width: 80rem;
+    position: relative;
+}
+
+.sky {
+    background: linear-gradient(skyblue, rgb(63, 142, 173));
+    height: 50%;
+    position: relative;
+    z-index: 5;
+}
+
+.ground {
+    background: linear-gradient(darkgreen, green);
+    height: 50%;
+}
+
+.sun {
+    background: radial-gradient(circle at center, yellow 0, orange 100%);
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    box-shadow: 0 0 20px orange;
+    z-index: 10;
+}
+
+.eye {
+    position: absolute;
+    width: 20px;
+    height: 10px;
+    background-color: black;
+    border-radius: 50%;
+}
+
+.eye1 {
+    top: 2rem;
+    left: 2rem;
+    animation: wink 1s linear infinite;
+}
+
+.eye2 {
+    top: 2rem;
+    right: 2rem;
+    animation: wink 1s linear infinite;
+    animation-delay: 0.5s;
+}
+
+.smile {
+    width: 4rem;
+    height: 2rem;
+    background-color: black;
+    border-radius: 10rem 10rem 0 0;
+    position: absolute;
+    top: 5rem;
+    left: 2.5rem;
+    transform: rotate(180deg);
+}
+
+.cloud {
+    position: absolute;
+    margin-top: 70px;
+    width: 350px;
+    height: 120px;
+    background: #ECEFF1;
+    box-shadow: -10px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 100px;
+    z-index: 10;
+}
+
+.cloud:first-of-type {
+    top: 5rem;
+    left: 3rem;
+    animation: cloud-move 4s infinite linear;
+}
+
+.cloud:nth-of-type(2n) {
+    top: 10px;
+    left: 30rem;
+    animation: cloud-move 5s infinite;
+}
+
+.cloud:nth-of-type(3n) {
+    top: 3.5rem;
+    right: 3rem;
+    animation: cloud-move 6s infinite;
+}
+
+.cloud::after,
+.cloud::before {
+    content: "";
+    position: relative;
+    display: inline-block;
+    background: inherit;
+    border-radius: inherit;
+}
+
+.cloud::after {
+    width: 100px;
+    height: 100px;
+    top: -220px;
+    left: 50px;
+}
+
+.cloud::before {
+    width: 180px;
+    height: 180px;
+    top: -70px;
+    left: 130px;
+}
+
+.windmill-base {
+    background: linear-gradient(0.25turn, rgb(46, 46, 46) 5%, gray 75%, rgb(49, 49, 49));
+    position: absolute;
+    width: 20px;
+    height: 350px;
+    bottom: 5rem;
+    right: 35rem;
+    z-index: 5;
+}
+
+.windmill-circle {
+    background: radial-gradient(circle at center, rgb(128, 128, 128), rgb(112, 112, 112), rgb(49, 49, 49));
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    border-radius: 50%;
+    right: 34.4rem;
+    top: 12rem;
+    z-index: 11;
+}
+
+.blade {
+    background-color: gray;
+    background: linear-gradient(rgb(87, 87, 87) 5%, gray 75%);
+    height: 2rem;
+    width: 10rem;
+    border-radius: 50%;
+    position: absolute;
+    top: 12.2rem;
+    right: 30.7rem;
+    z-index: 10;
+}
+
+.blade1 {
+    animation: spin1 6s linear infinite;
+}
+
+.blade2 {
+    animation: spin2 6s linear infinite;
+}
+
+.blade3 {
+    animation: spin3 6s linear infinite;
+}
+
+.base-shadow {
+    position: absolute;
+    width: 20px;
+    height: 250px;
+    bottom: 3.2rem;
+    right: 40.7rem;
+    transform: rotate(-45deg);
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.circle-shadow {
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 10;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    border-radius: 50%;
+    left: 31rem;
+    bottom: 16rem;
+}
+
+.blade-shadow {
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 2rem;
+    width: 10rem;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 16.3rem;
+    left: 27.5rem;
+    z-index: 3;
+}
+
+.blade1-shadow {
+    animation: spin1 6s linear infinite;
+}
+
+.blade2-shadow {
+    animation: spin2 6s linear infinite;
+}
+
+.blade3-shadow {
+    animation: spin3 6s linear infinite;
+}
+
+.flower {
+    position: absolute;
+    bottom: 10rem;
+    left: 20rem;
+}
+
+.flower2 {
+    position: absolute;
+    bottom: 13rem;
+    left: 23rem;
+}
+
+.flower3 {
+    position: absolute;
+    bottom: 12rem;
+    left: 17rem;
+}
+
+.stem {
+    width: 2px;
+    height: 20px;
+    background-color: rgb(0, 65, 0);
+}
+
+.pedal {
+    position: absolute;
+    width: 6px;
+    height: 10px;
+    background-color: red;
+    border-radius: 50%;
+}
+
+.pedal:first-of-type {
+    top: -10px;
+    left: -2px;
+}
+
+.pedal:nth-of-type(2) {
+    top: -6px;
+    left: 3px;
+    transform: rotate(72deg);
+}
+
+.pedal:nth-of-type(3) {
+    top: -2px;
+    left: 2px;
+    transform: rotate(144deg);
+}
+
+.pedal:nth-of-type(4) {
+    top: -2px;
+    left: -5px;
+    transform: rotate(216deg);
+}
+
+.pedal:nth-of-type(5) {
+    top: -6px;
+    left: -6px;
+    transform: rotate(288deg);
+}
+
+.pistil {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background-color: black;
+    z-index: 10;
+    top: -1px;
+}
+
+button {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    position: relative;
+}
+
+@keyframes spin1 {
+    from {
+        transform: rotate(0deg) translate(80px);
+    }
+
+    to {
+        transform: rotate(360deg) translate(80px);
+    }
+}
+
+@keyframes spin2 {
+    from {
+        transform: rotate(120deg) translate(80px);
+    }
+
+    to {
+        transform: rotate(480deg) translate(80px);
+    }
+}
+
+@keyframes spin3 {
+    from {
+        transform: rotate(240deg) translate(80px);
+    }
+
+    to {
+        transform: rotate(600deg) translate(80px);
+    }
+}
+
+@keyframes wink {
+    0% {
+        height: 10px;
+    }
+
+    50% {
+        height: 1px;
+    }
+
+    100% {
+        height: 10px;
+    }
+}
+
+@keyframes cloud-move {
+    0% {
+        transform: translate(0);
+    }
+
+    50% {
+        transform: translate(-40px);
+    }
+
+    100% {
+        transform: translate(0);
+    }
+}
+
+a {
+    position: absolute;
+    bottom: 2rem;
+    left: 2rem;
+}
